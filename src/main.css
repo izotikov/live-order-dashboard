@@ -2,3 +2,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@theme {
+    --color-primary: #7C3AED;
+    --color-secondary: #6B7280;
+    --color-accent: #F59E0B;
+    --color-neutral: #F9FAFB;
+    --color-success: #10B981;
+    --color-error: #EF4444;
+    --color-warning: #F59E0B;
+    --color-font: #1F2937;
+    --color-font-secondary: #6B7280;
+    --color-white: #FFFFFF;
+
+    /*Hover*/
+    --color-primary-hover: #8B5CF6;
+    --color-primary-active: #6D28D9;
+    --color-accent-hover: #D97706;
+    --color-neutral-hover: #E5E7EB;
+}
+
+@layer theme {
+    [data-theme="dark"] {
+        --color-primary: #6D28D9;
+        --color-secondary: #9CA3AF;
+        --color-accent: #F59E0B;
+        --color-neutral: #1F2937;
+        --color-success: #34D399;
+        --color-error: #F87171;
+        --color-warning: #FBBF24;
+        --color-font: #F9FAFB;
+        --color-font-secondary: #9CA3AF;
+        --color-white: #111827;
+
+        /*Hover*/
+        --color-primary-hover: #C4B5FD;
+        --color-primary-active: #8B5CF6;
+        --color-accent-hover: #FCD34D;
+        --color-neutral-hover: #374151;
+    }
+
+}

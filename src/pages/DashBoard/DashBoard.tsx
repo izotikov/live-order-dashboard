@@ -1,9 +1,14 @@
+import {FC} from "react";
+import {toggleTheme} from "@features/theme/themeConfig";
 
 
-const DashBoard = () => {
+const DashBoard: FC = () => {
   return (
     <div>
-      Dashboard will be here
+      <div className="bg-primary text-white rounded-xs">
+        Pop
+      </div>
+      <button onClick={toggleTheme}>Change theme</button>
     </div>
   );
 };
