@@ -8,70 +8,70 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root'
-import { Route as UserProfileRouteImport } from './routes/user-profile'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as rootRouteImport } from './routes/__root';
+import { Route as UserProfileRouteImport } from './routes/user-profile';
+import { Route as IndexRouteImport } from './routes/index';
 
 const UserProfileRoute = UserProfileRouteImport.update({
   id: '/user-profile',
   path: '/user-profile',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/user-profile': typeof UserProfileRoute
+  '/': typeof IndexRoute;
+  '/user-profile': typeof UserProfileRoute;
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/user-profile': typeof UserProfileRoute
+  '/': typeof IndexRoute;
+  '/user-profile': typeof UserProfileRoute;
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/user-profile': typeof UserProfileRoute
+  __root__: typeof rootRouteImport;
+  '/': typeof IndexRoute;
+  '/user-profile': typeof UserProfileRoute;
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/user-profile'
-  fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/user-profile'
-  id: '__root__' | '/' | '/user-profile'
-  fileRoutesById: FileRoutesById
+  fileRoutesByFullPath: FileRoutesByFullPath;
+  fullPaths: '/' | '/user-profile';
+  fileRoutesByTo: FileRoutesByTo;
+  to: '/' | '/user-profile';
+  id: '__root__' | '/' | '/user-profile';
+  fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  UserProfileRoute: typeof UserProfileRoute
+  IndexRoute: typeof IndexRoute;
+  UserProfileRoute: typeof UserProfileRoute;
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/user-profile': {
-      id: '/user-profile'
-      path: '/user-profile'
-      fullPath: '/user-profile'
-      preLoaderRoute: typeof UserProfileRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: '/user-profile';
+      path: '/user-profile';
+      fullPath: '/user-profile';
+      preLoaderRoute: typeof UserProfileRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: '/';
+      path: '/';
+      fullPath: '/';
+      preLoaderRoute: typeof IndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   UserProfileRoute: UserProfileRoute,
-}
+};
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+  ._addFileTypes<FileRouteTypes>();

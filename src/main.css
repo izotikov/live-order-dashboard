@@ -1,45 +1,44 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @theme {
-    --color-primary: #7C3AED;
-    --color-secondary: #6B7280;
-    --color-accent: #F59E0B;
-    --color-neutral: #F9FAFB;
-    --color-success: #10B981;
-    --color-error: #EF4444;
-    --color-warning: #F59E0B;
-    --color-font: #1F2937;
-    --color-font-secondary: #6B7280;
-    --color-white: #FFFFFF;
+  --color-primary: #7c3aed;
+  --color-secondary: #6b7280;
+  --color-accent: #f59e0b;
+  --color-neutral: #f9fafb;
+  --color-success: #10b981;
+  --color-error: #ef4444;
+  --color-warning: #f59e0b;
+  --color-font: #1f2937;
+  --color-font-secondary: #6b7280;
+  --color-white: #ffffff;
 
-    /*Hover*/
-    --color-primary-hover: #8B5CF6;
-    --color-primary-active: #6D28D9;
-    --color-accent-hover: #D97706;
-    --color-neutral-hover: #E5E7EB;
+  /*Hover*/
+  --color-primary-hover: #8b5cf6;
+  --color-primary-active: #6d28d9;
+  --color-accent-hover: #d97706;
+  --color-neutral-hover: #e5e7eb;
 }
 
 @layer theme {
-    [data-theme="dark"] {
-        --color-primary: #6D28D9;
-        --color-secondary: #9CA3AF;
-        --color-accent: #F59E0B;
-        --color-neutral: #1F2937;
-        --color-success: #34D399;
-        --color-error: #F87171;
-        --color-warning: #FBBF24;
-        --color-font: #F9FAFB;
-        --color-font-secondary: #9CA3AF;
-        --color-white: #111827;
+  [data-theme='dark'] {
+    --color-primary: #6d28d9;
+    --color-secondary: #9ca3af;
+    --color-accent: #f59e0b;
+    --color-neutral: #1f2937;
+    --color-success: #34d399;
+    --color-error: #f87171;
+    --color-warning: #fbbf24;
+    --color-font: #f9fafb;
+    --color-font-secondary: #9ca3af;
+    --color-white: #111827;
 
-        /*Hover*/
-        --color-primary-hover: #C4B5FD;
-        --color-primary-active: #8B5CF6;
-        --color-accent-hover: #FCD34D;
-        --color-neutral-hover: #374151;
-    }
-
+    /*Hover*/
+    --color-primary-hover: #c4b5fd;
+    --color-primary-active: #8b5cf6;
+    --color-accent-hover: #fcd34d;
+    --color-neutral-hover: #374151;
+  }
 }

@@ -1,12 +1,7 @@
-import {FC} from "react";
-
+import { FC } from 'react';
 
 const UserProfile: FC = () => {
-  return (
-    <div>
-      UserProfile will be here
-    </div>
-  );
+  return <div>UserProfile will be here</div>;
 };
 
 export default UserProfile;

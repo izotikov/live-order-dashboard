@@ -8,4 +8,4 @@ export const toggleTheme = () => {
   const newTheme = root.dataset.theme === 'light' ? 'dark' : 'light';
   root.dataset.theme = newTheme;
   localStorage.setItem('theme', newTheme);
-}
+};

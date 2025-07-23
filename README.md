@@ -1,7 +1,6 @@
 # Панель заказов в реальном времени
 
-Имитация админской панели, где в реальном времени приходят заказы (по WebSocket), 
+Имитация админской панели, где в реальном времени приходят заказы (по WebSocket),
 а TanStack Query используется для загрузки и кэширования "старых" заказов и работы с серверными данными.
 
-**_Стек проекта_**: _React + Typescript, MobX, Tanstack Query, Tanstack Router, Websocket, Vite_ 
-
+**_Стек проекта_**: _React + Typescript, MobX, Tanstack Query, Tanstack Router, Websocket, Vite_
