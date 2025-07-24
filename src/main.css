@@ -5,40 +5,66 @@
 
 @theme {
   --color-primary: #7c3aed;
-  --color-secondary: #6b7280;
+  --color-primary-content: #ffffff;
+  --color-primary-light: #9b69f1;
+  --color-primary-dark: #5f14e0;
+  --color-primary-hover: var(--color-primary-dark);
+
+  --color-secondary: #3ae7ed;
+  --color-secondary-content: #032425;
+  --color-secondary-light: #69edf1;
+  --color-secondary-dark: #14d9e0;
+  --color-secondary-hover: var(--color-secondary-dark);
+
   --color-accent: #f59e0b;
+  --color-accent-light: #f7b13c;
+  --color-accent-dark: #c57f08;
+  --color-accent-hover: var(--color-accent-dark);
+
   --color-neutral: #f9fafb;
+  --color-neutral-light: #e5e7eb;
+  --color-neutral-dark: #dae0e7;
+  --color-neutral-hover: var(--color-neutral-dark);
+
+  /*Utility colors*/
   --color-success: #10b981;
   --color-error: #ef4444;
   --color-warning: #f59e0b;
   --color-font: #1f2937;
   --color-font-secondary: #6b7280;
   --color-white: #ffffff;
-
-  /*Hover*/
-  --color-primary-hover: #8b5cf6;
-  --color-primary-active: #6d28d9;
-  --color-accent-hover: #d97706;
-  --color-neutral-hover: #e5e7eb;
 }
 
 @layer theme {
   [data-theme='dark'] {
-    --color-primary: #6d28d9;
-    --color-secondary: #9ca3af;
-    --color-accent: #f59e0b;
-    --color-neutral: #1f2937;
-    --color-success: #34d399;
-    --color-error: #f87171;
-    --color-warning: #fbbf24;
+    --color-primary: #411784;
+    --color-primary-content: #c5aaf0;
+    --color-primary-light: #561faf;
+    --color-primary-dark: #2c0f59;
+    --color-primary-hover: var(--color-primary-light);
+
+    --color-secondary: #177e84;
+    --color-secondary-content: #aaecf0;
+    --color-secondary-light: #1fa7af;
+    --color-secondary-dark: #0f5559;
+    --color-secondary-hover: var(--color-secondary-light);
+
+    --color-accent: #848417;
+    --color-accent-light: #afaf1f;
+    --color-accent-dark: #59590f;
+    --color-accent-hover: var(--color-accent-dark);
+
+    --color-neutral: #efecf3;
+    --color-neutral-light: #ffffff;
+    --color-neutral-dark: #d5cddf;
+    --color-neutral-hover: var(--color-neutral-dark);
+
+    /*Utility colors*/
+    --color-success: #178417;
+    --color-error: #841717;
+    --color-warning: #848417;
     --color-font: #f9fafb;
     --color-font-secondary: #9ca3af;
     --color-white: #111827;
-
-    /*Hover*/
-    --color-primary-hover: #c4b5fd;
-    --color-primary-active: #8b5cf6;
-    --color-accent-hover: #fcd34d;
-    --color-neutral-hover: #374151;
   }
 }
