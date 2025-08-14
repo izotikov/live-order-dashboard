@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Link } from '@tanstack/react-router';
-import ToggleThemeButton from '@widgets/Header/ToggleThemeButton';
+import ToggleThemeButton from '@features/theme/ui/ToggleThemeButton';
 
 const Header: FC = () => {
   return (
