@@ -1,5 +1,5 @@
 import React from 'react';
-import TaskStore from './Task/model/TaskStore';
+import TaskStore from '@entities/Task/model/TaskStore';
 
 /**
  * Контекст для доступа к корневым хранилищам приложения.

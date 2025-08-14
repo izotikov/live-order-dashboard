@@ -17,7 +17,6 @@
     "*.{ts,tsx,json,css,md}": "prettier --write"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^2.8.2",
     "@tailwindcss/vite": "^4.1.11",
     "@tanstack/react-query": "^5.83.0",
     "@tanstack/react-query-devtools": "^5.83.0",
@@ -46,8 +45,6 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.1.2",
     "prettier": "^3.6.2",
-    "sass": "^1.89.2",
-    "sass-embedded": "^1.89.2",
     "typescript": "~5.8.3",
     "vite": "^7.0.4"
   }

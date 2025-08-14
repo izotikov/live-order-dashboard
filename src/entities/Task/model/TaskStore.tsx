@@ -1,5 +1,5 @@
 import { makeAutoObservable, runInAction } from 'mobx';
-import { Task } from '../types/task';
+import { Task } from '@entities/Task/types/task';
 
 type ColumnType = 'todo' | 'inprogress' | 'done';
 
