@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import { FiMoon, FiSun } from 'react-icons/fi';
-import CustomButton from '@shared/ui/CustomButton';
+import CustomButton from '@shared/ui/CustomButton/ui/CustomButton';
 import { toggleTheme } from '@features/theme/model/themeConfig';
 
 const ToggleThemeButton: FC = () => {

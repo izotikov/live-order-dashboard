@@ -9,6 +9,8 @@ interface BoardProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const Board: FC<BoardProps> = ({ name, tasks }) => {
+  const taskClassName: string = 'bg-primary';
+
   return (
     <Flex vertical gap='small' className='flex-1'>
       <h2 className='text-xl uppercase m-1'>
@@ -22,6 +24,7 @@ const Board: FC<BoardProps> = ({ name, tasks }) => {
             <TaskCard
               key={task.id}
               title={task.name}
+              className={taskClassName}
               taskDescription={task.description}
             />
           ))
