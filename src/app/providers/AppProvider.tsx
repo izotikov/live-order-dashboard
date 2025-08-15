@@ -1,7 +1,7 @@
 import { ReactNode, useEffect } from 'react';
-import { initTheme } from '@features/theme/model/themeConfig';
-import { useStores } from '@entities/index';
-import task from '../../../apiMock/api';
+import task from '@shared/api/mocks/apiMock';
+import { initTheme } from '@app/theme/model/themeConfig';
+import { useStores } from '@app/store';
 
 let didInit = false;
 

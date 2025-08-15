@@ -5,8 +5,12 @@ interface TaskCardProps extends BaseCardProps {
   taskDescription?: string;
 }
 
-const TaskCard: FC<TaskCardProps> = ({ taskDescription, ...restProps }) => {
-  return <BaseCard {...restProps}>{taskDescription}</BaseCard>;
+const TaskCard: FC<TaskCardProps> = ({ taskDescription, title, ...props }) => {
+  return (
+    <BaseCard title={title} {...props}>
+      {taskDescription}
+    </BaseCard>
+  );
 };
 
 export default TaskCard;

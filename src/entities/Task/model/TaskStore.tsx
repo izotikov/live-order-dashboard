@@ -1,7 +1,7 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 import { Task } from '@entities/Task/types/task';
 
-type ColumnType = 'todo' | 'inprogress' | 'done';
+export type ColumnType = 'todo' | 'inprogress' | 'done';
 
 /**
  * MobX-хранилище для управления задачами
@@ -24,30 +24,6 @@ class TaskStore {
     runInAction(() => {
       this.tasks = tasks;
     });
-  }
-
-  /**
-   * Получает задачи со статусом 'todo'
-   * @returns {Task[]} Массив задач со статусом "To Do"
-   */
-  taskTodo() {
-    return this.tasks.filter((t) => t?.status === 'todo');
-  }
-
-  /**
-   * Получает задачи со статусом 'inprogress'
-   * @returns {Task[]} Массив задач со статусом "In Progress"
-   */
-  taskInProgress() {
-    return this.tasks.filter((t) => t?.status === 'inprogress');
-  }
-
-  /**
-   * Получает задачи со статусом 'done'
-   * @returns {Task[]} Массив задач со статусом "Done"
-   */
-  taskDone() {
-    return this.tasks.filter((t) => t?.status === 'done');
   }
 
   /**
