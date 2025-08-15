@@ -1,197 +1,78 @@
 @import 'tailwindcss';
-@import 'tw-animate-css';
-/*---break---*/
-@custom-variant dark (&:is(.dark *));
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @theme {
-  --color-primary: #7c3aed;
-  --color-primary-content: #ffffff;
-  --color-primary-light: #9b69f1;
-  --color-primary-dark: #5f14e0;
+  /* Light Mode Palette */
+  --color-primary: #3b82f6; /* Tech blue for main actions (e.g., buttons on dashboard/tasks) - modern, trustworthy */
+  --color-primary-light: #60a5fa; /* Lighter for hover states */
+  --color-primary-dark: #1d4ed8; /* Darker for active/pressed */
   --color-primary-hover: var(--color-primary-dark);
 
-  --color-secondary: #3ae7ed;
-  --color-secondary-content: #032425;
-  --color-secondary-light: #69edf1;
-  --color-secondary-dark: #14d9e0;
+  --color-secondary: #6b7280; /* Neutral gray for secondary elements (e.g., navigation, user profile) - subtle, non-intrusive */
+  --color-secondary-light: #9ca3af;
+  --color-secondary-dark: #4b5563;
   --color-secondary-hover: var(--color-secondary-dark);
 
-  --color-accent: #f59e0b;
-  --color-accent-light: #f7b13c;
-  --color-accent-dark: #c57f08;
+  --color-accent: #14b8a6; /* Muted teal for highlights (e.g., time tracker progress, accents on cards) - adds modernity without overload */
+  --color-accent-light: #2dd4bf;
+  --color-accent-dark: #0f766e;
   --color-accent-hover: var(--color-accent-dark);
 
-  --color-neutral: #f9fafb;
-  --color-neutral-light: #e5e7eb;
-  --color-neutral-dark: #dae0e7;
+  --color-neutral: #f9fafb; /* Soft off-white for main backgrounds (e.g., dashboard panels) - clean and airy */
+  --color-neutral-light: #f3f4f6; /* For subtle highlights */
+  --color-neutral-dark: #e5e7eb; /* For borders/shadows */
   --color-neutral-hover: var(--color-neutral-dark);
 
-  /*Utility colors*/
-  --color-success: #10b981;
-  --color-error: #ef4444;
-  --color-warning: #f59e0b;
-  --color-font: #1f2937;
-  --color-font-secondary: #6b7280;
-  --color-white: #ffffff;
+  /* Added for better control: Background and border - justifies separation for elements like cards/tasks */
+  --color-background: #ffffff; /* Pure white for content areas in light mode */
+  --color-border: #d1d5db; /* Light gray borders for definition without harshness */
+
+  /* Utility colors - Kept standard but muted for neutrality */
+  --color-success: #10b981; /* Green for completed tasks - positive, tech-inspired */
+  --color-error: #ef4444; /* Red for errors - alerting but not aggressive */
+  --color-warning: #f59e0b; /* Amber for warnings (e.g., overdue tasks) - warm yet strict */
+  --color-font: #111827; /* Dark gray for primary text - high contrast, readable */
+  --color-font-secondary: #6b7280; /* Lighter gray for subtitles/labels */
+  --color-white: #ffffff; /* For icons/text on dark elements */
 }
 
 @layer theme {
   [data-theme='dark'] {
-    --color-primary: #411784;
-    --color-primary-content: #c5aaf0;
-    --color-primary-light: #561faf;
-    --color-primary-dark: #2c0f59;
-    --color-primary-hover: var(--color-primary-light);
+    /* Dark Mode Palette - Inverted for contrast, deeper tones for comfort */
+    --color-primary: #1e40af; /* Darker blue - maintains tech feel in low light */
+    --color-primary-light: #3b82f6;
+    --color-primary-dark: #1e3a8a;
+    --color-primary-hover: var(
+      --color-primary-light
+    ); /* Hover lightens for visibility */
 
-    --color-secondary: #177e84;
-    --color-secondary-content: #aaecf0;
-    --color-secondary-light: #1fa7af;
-    --color-secondary-dark: #0f5559;
+    --color-secondary: #9ca3af; /* Lighter gray - avoids pure black for pleasantness */
+    --color-secondary-light: #d1d5db;
+    --color-secondary-dark: #6b7280;
     --color-secondary-hover: var(--color-secondary-light);
 
-    --color-accent: #848417;
-    --color-accent-light: #afaf1f;
-    --color-accent-dark: #59590f;
-    --color-accent-hover: var(--color-accent-dark);
+    --color-accent: #0f766e; /* Darker teal - subtle glow in dark mode */
+    --color-accent-light: #14b8a6;
+    --color-accent-dark: #064e3b;
+    --color-accent-hover: var(--color-accent-light);
 
-    --color-neutral: #efecf3;
-    --color-neutral-light: #ffffff;
-    --color-neutral-dark: #d5cddf;
-    --color-neutral-hover: var(--color-neutral-dark);
+    --color-neutral: #1f2937; /* Deep gray background - technological, not pitch black */
+    --color-neutral-light: #374151;
+    --color-neutral-dark: #111827;
+    --color-neutral-hover: var(--color-neutral-light);
 
-    /*Utility colors*/
-    --color-success: #178417;
-    --color-error: #841717;
-    --color-warning: #848417;
-    --color-font: #f9fafb;
+    /* Adapted added variables */
+    --color-background: #111827; /* Dark gray for content areas - reduces eye strain */
+    --color-border: #374151; /* Subtle borders in dark mode */
+
+    /* Utility colors - Adjusted for dark mode visibility */
+    --color-success: #059669; /* Darker green - pops without glaring */
+    --color-error: #b91c1c;
+    --color-warning: #d97706;
+    --color-font: #f9fafb; /* Light text for contrast */
     --color-font-secondary: #9ca3af;
-    --color-white: #111827;
-  }
-}
-
-/*---break---*/
-
-@theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-}
-
-/*---break---*/
-
-:root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
-
-/*---break---*/
-
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
-}
-
-/*---break---*/
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
+    --color-white: #1f2937; /* Inverted for dark elements */
   }
 }

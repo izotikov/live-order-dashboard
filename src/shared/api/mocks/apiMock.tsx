@@ -1,4 +1,4 @@
-import { Task } from '../src/entities/Task/types/task';
+import { Task } from '@entities/Task/types/task';
 
 const task: Task[] = [
   {

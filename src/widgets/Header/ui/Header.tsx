@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { Link } from '@tanstack/react-router';
-import ToggleThemeButton from '@features/theme/ui/ToggleThemeButton';
+import ToggleThemeButton from '@app/theme/ui/ToggleThemeButton';
 
 const Header: FC = () => {
   return (
-    <div className='p-2 flex gap-2'>
+    <div className='p-2 flex gap-2 text-(--color-font-secondary)'>
       <Link to='/' className='[&.active]:font-bold'>
         Home
       </Link>{' '}
