@@ -8,8 +8,8 @@ import { Board } from '@widgets/Board';
 const DashBoard: FC = () => {
   return (
     <div className='flex flex-col sm:flex-row w-full p-5 gap-2 text-(--color-font-secondary)'>
-      <Board name='Открыто' taskStatus='todo' />
-      <Board name='В работе' taskStatus='inprogress' />
+      <Board name='Открыто' taskStatus='open' />
+      <Board name='В работе' taskStatus='in_progress' />
       <Board name='Выполнено' taskStatus='done' />
     </div>
   );
