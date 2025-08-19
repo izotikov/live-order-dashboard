@@ -1,7 +1,5 @@
 import { makeAutoObservable, runInAction } from 'mobx';
-import { Task } from '@entities/Task/types/task';
-
-export type ColumnType = 'todo' | 'inprogress' | 'done';
+import { Task, TaskStatus } from '@entities/Task/types/task';
 
 /**
  * MobX-хранилище для управления задачами
@@ -37,19 +35,19 @@ class TaskStore {
 
   /**
    * Получает задачи по статусу
-   * @param {ColumnType} status - Статус задач для фильтрации
+   * @param {TaskStatus} status - Статус задач для фильтрации
    * @returns {Task[]} Массив задач с указанным статусом
    */
-  getTasksByStatus(status: ColumnType) {
+  getTasksByStatus(status: TaskStatus) {
     return this.tasks.filter((task) => task.status === status);
   }
 
   /**
    * Обновляет статус задачи
    * @param {string} taskId - ID задачи
-   * @param {ColumnType} newStatus - Новый статус задачи
+   * @param {TaskStatus} newStatus - Новый статус задачи
    */
-  updateTaskStatus(taskId: string, newStatus: ColumnType) {
+  updateTaskStatus(taskId: string, newStatus: TaskStatus) {
     const task = this.getTaskById(taskId);
     if (task) {
       task.status = newStatus;
@@ -58,10 +56,10 @@ class TaskStore {
 
   /**
    * Обновляет список задач для указанной колонки
-   * @param {ColumnType} columnType - Тип колонки
+   * @param {TaskStatus} columnType - Тип колонки
    * @param {Task[]} tasks - Новый массив задач для колонки
    */
-  updateTasksForColumn(columnType: ColumnType, tasks: Task[]) {
+  updateTasksForColumn(columnType: TaskStatus, tasks: Task[]) {
     // Фильтруем задачи, не принадлежащие этой колонке
     const otherTasks = this.tasks.filter((task) => task.status !== columnType);
     this.tasks = [...otherTasks, ...tasks];

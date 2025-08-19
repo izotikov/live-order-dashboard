@@ -1,13 +1,14 @@
 import React, { FC, HTMLAttributes } from 'react';
-import TaskStore, { ColumnType } from '@entities/Task/model/TaskStore';
+import TaskStore from '@entities/Task/model/TaskStore';
 import { observer } from 'mobx-react-lite';
 import { Flex } from '@shared/ui/Flex';
 import { TaskName } from '@widgets/Board';
 import { TaskCard } from '@entities/Task';
+import { TaskStatus } from '@entities/Task/types/task';
 
 interface BoardProps extends HTMLAttributes<HTMLDivElement> {
   name: string;
-  taskStatus: ColumnType;
+  taskStatus: TaskStatus;
 }
 
 const Board: FC<BoardProps> = observer(({ name, taskStatus }) => {
