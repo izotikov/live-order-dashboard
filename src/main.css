@@ -3,6 +3,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  src: url('./src/shared/ui/fonts/Inter/Inter-VariableFont_opsz,wght.ttf')
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 100 900;
+  src: url('./src/shared/ui/fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf')
+    format('truetype');
+}
+
 @theme {
   /* Light Mode Palette */
   --color-primary: #3b82f6; /* Tech blue for main actions (e.g., buttons on dashboard/tasks) - modern, trustworthy */
@@ -36,6 +52,37 @@
   --color-font: #111827; /* Dark gray for primary text - high contrast, readable */
   --color-font-secondary: #6b7280; /* Lighter gray for subtitles/labels */
   --color-white: #ffffff; /* For icons/text on dark elements */
+
+  /* Priority background colors */
+  --color-priority-very-low: #e8f5ed;
+  --color-priority-low: #dcfce7;
+  --color-priority-medium: #fef9c3;
+  --color-priority-high: #ffd78d;
+  --color-priority-critical: #fee2e2;
+
+  /* Priority text colors */
+  --color-priority-very-low-text: #7bb992;
+  --color-priority-low-text: #166534;
+  --color-priority-medium-text: #854d0e;
+  --color-priority-high-text: #896708;
+  --color-priority-critical-text: #991b1b;
+
+  /* Type background colors */
+  --color-type-feature: #f3e8ff;
+  --color-type-bug: #fee2e2;
+  --color-type-task: #fef9c3;
+  --color-type-improvement: #dbeafe;
+  --color-type-research: #dcfce7;
+
+  /* Type text colors */
+  --color-type-feature-text: #6b21a8;
+  --color-type-bug-text: #991b1b;
+  --color-type-task-text: #854d0e;
+  --color-type-improvement-text: #1e40af;
+  --color-type-research-text: #166534;
+
+  /* Fonts */
+  --font-inter: 'Inter', sans-serif;
 }
 
 @layer theme {
@@ -74,5 +121,36 @@
     --color-font: #f9fafb; /* Light text for contrast */
     --color-font-secondary: #9ca3af;
     --color-white: #1f2937; /* Inverted for dark elements */
+
+    /* Priority background colors */
+    --color-priority-very-low: #e8f5ed;
+    --color-priority-low: #dcfce7;
+    --color-priority-medium: #fef9c3;
+    --color-priority-high: #ffd78d;
+    --color-priority-critical: #fee2e2;
+
+    /* Priority text colors */
+    --color-priority-very-low-text: #7bb992;
+    --color-priority-low-text: #166534;
+    --color-priority-medium-text: #854d0e;
+    --color-priority-high-text: #896708;
+    --color-priority-critical-text: #991b1b;
+
+    /* Type background colors */
+    --color-type-feature: #f3e8ff;
+    --color-type-bug: #fee2e2;
+    --color-type-task: #fef9c3;
+    --color-type-improvement: #dbeafe;
+    --color-type-research: #dcfce7;
+
+    /* Type text colors */
+    --color-type-feature-text: #6b21a8;
+    --color-type-bug-text: #991b1b;
+    --color-type-task-text: #854d0e;
+    --color-type-improvement-text: #1e40af;
+    --color-type-research-text: #166534;
+
+    /* Fonts */
+    --font-inter: 'Inter', sans-serif;
   }
 }

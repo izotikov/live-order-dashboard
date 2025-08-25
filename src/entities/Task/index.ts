@@ -1,1 +1,2 @@
-export { default as TaskCard } from './ui/TaskCard';
+export * from './types/task';
+export * from './model/TaskStore';

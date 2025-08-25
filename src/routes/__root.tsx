@@ -3,7 +3,7 @@ import Header from '@widgets/Header/ui/Header';
 
 export const Route = createRootRoute({
   component: () => (
-    <div className='bg-neutral min-h-screen'>
+    <div className='bg-neutral min-h-screen font-inter'>
       <Header />
       <Outlet />
     </div>

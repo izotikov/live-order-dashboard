@@ -1,21 +1,42 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import {
   Card,
   CardContent,
+  CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
-} from '@shared/shadcn-ui/ui/card';
-import * as React from 'react';
+} from '@shared/shadcn-ui/ui/card/card';
 
-export interface BaseCardProps extends React.ComponentProps<'div'> {}
+export interface BaseCardProps {
+  className?: string;
+  title?: string;
+  description?: string;
+  headerExtra?: ReactNode;
+  content?: ReactNode;
+  footer?: ReactNode;
+  children?: ReactNode;
+}
 
-const BaseCard: FC<BaseCardProps> = ({ children, title, ...props }) => {
+const BaseCard: FC<BaseCardProps> = ({
+  title,
+  description,
+  headerExtra,
+  content,
+  footer,
+  children,
+  className,
+  ...props
+}) => {
   return (
-    <Card {...props}>
+    <Card className={className} {...props}>
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
+        {description && <CardDescription>{description}</CardDescription>}
+        {title && <CardTitle>{title}</CardTitle>}
+        {headerExtra}
       </CardHeader>
-      <CardContent>{children}</CardContent>
+      <CardContent>{content || children}</CardContent>
+      {footer && <CardFooter>{footer}</CardFooter>}
     </Card>
   );
 };

@@ -1,10 +1,9 @@
 import React, { FC, HTMLAttributes } from 'react';
-import TaskStore from '@entities/Task/model/TaskStore';
 import { observer } from 'mobx-react-lite';
 import { Flex } from '@shared/ui/Flex';
-import { TaskName } from '@widgets/Board';
-import { TaskCard } from '@entities/Task';
-import { TaskStatus } from '@entities/Task/types/task';
+import { TaskStatus } from '@entities/Task';
+import TaskStore from '@entities/Task/model/TaskStore';
+import { TaskCard, TaskName } from '@pages/DashBoard';
 
 interface BoardProps extends HTMLAttributes<HTMLDivElement> {
   name: string;
@@ -23,12 +22,7 @@ const Board: FC<BoardProps> = observer(({ name, taskStatus }) => {
           <div>Задач пока нет</div>
         ) : (
           tasks.map((task) => (
-            <TaskCard
-              key={task.id}
-              title={task.name}
-              className={taskClassName}
-              taskDescription={task.description}
-            />
+            <TaskCard key={task.id} task={task} className={taskClassName} />
           ))
         )}
       </div>
